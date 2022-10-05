@@ -5,9 +5,12 @@ const Form = ({ categorys, todoData, handleSubmitData }) => {
   const now = new Date();
 
   const parseMonth = now.getMonth() + 1;
+  const parseDay = now.getDate();
   let dateData = `${now.getFullYear()}-${
     parseMonth < 10 ? `0${parseMonth}` : parseMonth
-  }-${now.getDate()}`;
+  }-${parseDay < 10 ? `0${parseDay}` : parseDay}`;
+
+  console.log(dateData);
 
   let categoryData = categoryDefault;
   let contentData = "";
@@ -44,7 +47,7 @@ const Form = ({ categorys, todoData, handleSubmitData }) => {
             <div className="title">Date</div>
             <input
               type="date"
-              value={date}
+              value={dateData}
               className="input-outline input-layout"
               onChange={({ target }) => setDate(target.value)}
             />

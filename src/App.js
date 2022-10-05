@@ -13,7 +13,6 @@ function App() {
   const [categorys, setCategorys] = useState(categoryData);
 
   const [show, setShow] = useState(false);
-  const [info, setInfo] = useState({});
   const [deleteInfo, setDeleteInfo] = useState({});
 
   const navigate = useNavigate();
